@@ -19,7 +19,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
 
     private List<Item> itemList;
 
-    public static ItemClickListener clickListener;
+    public ItemClickListener clickListener;
 
     public ItemsAdapter(List<Item> itemList) {
         this.itemList = itemList;
@@ -51,7 +51,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
         return itemList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imageView;
         TextView itemTitle, itemDescription;
@@ -69,6 +69,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.MyViewHolder
         @Override
         public void onClick(View v) {
             if (clickListener != null) {
+                System.out.println("CLICK inside");
                 clickListener.onClick(v, getAdapterPosition());
             }
         }
