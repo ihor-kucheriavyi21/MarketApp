@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements ItemClickListener
 
     @Override
     public void onClick(View view, int pos) {
-        Toast.makeText(this,"You choose" +itemList.get(pos).getItemTitle(),
+        Toast.makeText(this,"You choose " +itemList.get(pos).getItemTitle(),
         Toast.LENGTH_LONG).show();
     }
 }
